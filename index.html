@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bakground slider</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="brand">
+            <span style="--i:1">S</span>
+            <span style="--i:2">O</span>
+            <span style="--i:3">T</span>
+            <span style="--i:4">B</span>
+            <span style="--i:5">E</span>
+            <span style="--i:6">L</span>
+            <span style="--i:7">L</span>
+            <span style="--i:8">A</span></a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">Home</a>
+                <a href="#">categories</a>
+                <a href="#">Notifications</a>
+                <a href="#">Account</a>
+                <a href="#">Cart</a>
+            </div>
+        </div>
+    </header>
+    <section class="home">
+        <video class="video-slide active" src="party collection low res without text.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="video (2160p).mp4" autoplay muted loop></video>
+        <video class="video-slide" src="party collection reel with text.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="pexels-polina-tankilevitch-5586008 (1080p).mp4" autoplay muted loop></video>
+        <video class="video-slide" src="production_id_3894705 (2160p).mp4" autoplay muted loop></video>
+        <div class="content active">
+          
+            
+            
+        </div>
+        <div class="content">
+            <h1>Feel Your.<br><span>Clothing</span></h1>
+            <p>Clothing (also known as clothes, garments, dress, apparel, or attire) is any item worn on the body. Typically, clothing is made of fabrics or textiles, but over time it has included garments made from animal skin and other thin sheets of materials and natural products found in the environment, put together. The wearing of clothing is mostly restricted to human beings and is a feature of all human societies.</p>
+            <a href="https://en.wikipedia.org/wiki/Clothing">Read More</a>
+        </div>
+        <div class="content">
+        
+        </div>
+        <div class="content">
+            <h1>Sophisticated like Your.<br><span>Brand</span></h1>
+            <p>Clothing (also known as clothes, garments, dress, apparel, or attire) is any item worn on the body. Typically, clothing is made of fabrics or textiles, but over time it has included garments made from animal skin and other thin sheets of materials and natural products found in the environment, put together. The wearing of clothing is mostly restricted to human beings and is a feature of all human societies.</p>
+            <a href="https://en.wikipedia.org/wiki/Clothing">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Enjoy Your.<br><span>Clothing</span></h1>
+            <p>Clothing (also known as clothes, garments, dress, apparel, or attire) is any item worn on the body. Typically, clothing is made of fabrics or textiles, but over time it has included garments made from animal skin and other thin sheets of materials and natural products found in the environment, put together. The wearing of clothing is mostly restricted to human beings and is a feature of all human societies.</p>
+            <a href="https://en.wikipedia.org/wiki/Clothing">Read More</a>
+        </div>
+        <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+
+
+
+    </section>
+
+    <script>
+      const menuBtn =document.querySelector(".menu-btn") ;
+      const navigation= document.querySelector(".navigation");
+      menuBtn.addEventListener("click",()=>{
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+      }) ;
+      const btns=document.querySelectorAll(".nav-btn");
+      const slides=document.querySelectorAll(".video-slide");
+      const contents=document.querySelectorAll(".content");
+      var sliderNav=function(manual){
+        btns.forEach((btn) =>{
+            btn.classList.remove("active");
+        });
+
+        slides.forEach((slide) =>{
+            slide.classList.remove("active");
+        });
+        contents.forEach((content) =>{
+            content.classList.remove("active");
+        });
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+      }
+      btns.forEach((btn,i)=>{
+        btn.addEventListener("click",() => {
+            sliderNav(i);
+        });
+      });
+   </script>
+</body>
+</html>
